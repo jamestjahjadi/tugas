@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+        </title>
+    </head>
+<body>
+    <form>
+       Ketik Kalimat: <br><input type="text"id='kalimat'>
+       <br><br>
+            Masukan Kata Yang ingin Dicari: <br>
+            <input type='text'id='search'>
+    </form>
+    <br>
+        <button onclick="fungsi()">click here</button>
+            <p id='tes'>result</p>
+</body>
+</html>
+<script>
+function fungsi(){
+    var input1=
+    document.getElementById('kalimat').value
+    var input2= 
+    document.getElementById('search').value
+    var input3= new RegExp(input2,'g')
+    document.getElementById('tes').innerHTML=input1.match(input3).length
+}
+</script>
