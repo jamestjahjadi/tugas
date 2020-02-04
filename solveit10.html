@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Quiz</h2>
+    <form>
+<h4>'Siapakah President Ketiga Republik Indonesia?'</h4>
+<h5>
+<input type="radio" name='pilihan1' value= 'true'>Prof.B.J.Habibie &nbsp;
+<input type="radio" name='pilihan1' value='false'>Abdurrahman Wahid &nbsp;
+<input type="radio" name='pilihan1' value='false'>Ir.Soekarno &nbsp;
+<input type="radio" name='pilihan1' value='false'>Joko Widodo
+</h5>
+
+<h4>Berikut Adalah Bahasa Pemrograman, kecuali...</h4>
+<h5>
+<input type="radio" name='pilihan2' value='true'checked>HTML &nbsp;
+<input type="radio" name='pilihan2' value='false'checked>Java &nbsp;
+<input type="radio" name='pilihan2' value='false'checked>Phyton &nbsp;
+<input type="radio" name='pilihan2' value='false'checked>Javascript
+</h5>
+
+<h4>Apa Judul lagu yang diduga plagiat oleh lagu "sayang" Via Valen</h4>
+<h5>
+<input type="radio" name='pilihan3' value='false'checked>Qing Fei De Yi &nbsp;
+<input type="radio" name='pilihan3' value='false'checked>Ting Hai &nbsp;
+<input type="radio" name='pilihan3' value='true'checked>Mirai E Kiroro &nbsp;
+<input type="radio" name='pilihan3' value='false'checked>Hau Siang Hau Siang
+</h5>
+
+<h4>Siapakah sosok di balik batman?</h4>
+<h5>
+<input type="radio" name='pilihan4' value='true'checked>Bruce Wayne &nbsp;
+<input type="radio" name='pilihan4' value='false'checked>Peter Parker &nbsp;
+<input type="radio" name='pilihan4' value='false'checked>Uncle Ben &nbsp;
+<input type="radio" name='pilihan4' value='false'checked>Clark Kent
+</h5>
+<br><br>
+<button onclick="fungsi()">Submit</button>
+        <h3 id='Nilai'>Nilai yang anda dapat</h3>
+    </form>
+</body>
+</html>
+<script>
+function fungsi(){
+    document.getElementsByName('pilihan1').value .checked
+    document.getElementsByName('pilihan1').checked=false
+    document.getElementsByName('pilihan1').checked=false
+    document.getElementsByName('pilihan1').checked=false
+    if('pilihan1'==true){
+        return document.getElementByName('Nilai')=`Nilai yang anda dapat 100`
+    }
+}
+</script>

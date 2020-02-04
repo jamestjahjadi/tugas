@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <center>
+
+        
+
+            
+           
+        </center>
+         <h1 id='hasil'></h1>
+    </body>
+    <script>
+        class Soal{
+            constructor(soal,pilihan,jawaban,kelompokname){
+                this.soal=soal,
+                this.pilihan=pilihan,
+                this.jawaban=jawaban,
+                this.kelompokname=kelompokname
+            }
+        }
+        var datasoal=[
+            new Soal('Siapa President ke 3?',['Bj.Habibie','Soekarno','Abdurahman wahid','jokowi'],0,'president'),
+            new Soal('Siapa Penyanyi lagu baby?',['Offset','didi kempot','Justin Bieber','iwan fals'],2,'penyanyi'),
+        ]
+        const printQuestion=()=>{
+            var output=``
+                for(var i=0;i<datasoal.length;i++){
+                    var pilihan=''
+                        for(var j=0;j<datasoal[i].pilihan.length;j++){
+                            pilihan+=`<input type="radio" name=${datasoal[i].kelompokname} value=${j}>${datasoal[i].pilihan[j]}`
+                        }
+                        output+=` <p>${datasoal[i].soal}</p>`
+                        output+=pilihan
+                }
+                output+=`<br><br><button onclick="onclickjawaban()">submit</button>`
+                document.getElementsByTagName('center')[0].innerHTML=output
+        }
+        const onclickjawaban=()=>{
+            var skor=0
+            var tambahskor=100/datasoal.length
+            var hitungan=0
+            for(var i=0;i<datasoal.length;i++){
+                for(var j=0;j<document.getElementsByName(datasoal[i].kelompokname).length;j++){
+                    if(document.getElementsByName(datasoal[i].kelompokname)[j].checked){
+                        if(document.getElementsByName(datasoal[i].kelompokname)[j].value==datasoal[i].jawaban){
+                            skor+=tambahskor
+                        }
+                        hitungan++
+                    }
+                }
+            }
+            if(hitungan==datasoal.length){
+                document.getElementById('hasil').innerHTML=`selamat anda mendapat poin ${skor}` 
+            }else{document.getElementById('hasil').innerHTML='belom selesai'
+            }
+        }
+        printQuestion()
+    </script>
+</html>
