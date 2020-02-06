@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        table{
+            margin: 0 auto;
+            text-align: justifyx;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                Nama: <input oninput="funcName()" type="text" id="namainput"><br><br>
+                Harga: <input type="number" id="range1">-<input type="number" id="range2"><br><br>
+                Kategori: <select id="kategori">
+                    <option hidden value="All">All</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="pakaian">Pakaian</option>
+                    <option value="buah">Buah</option>
+                    <option value="makanan">Makanan</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+<br> <br>
+    <table>
+      <thead>
+          <tr>
+              <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Name" id="inputname">
+                            </td>
+                            <td>
+                                <input type="number" placeholder="harga" id="inputharga">
+                            </td>
+                            <td>
+                                <select id="inputselect">
+                                    <option hidden value="All">All</option>
+                                    <option value="elektronik">Elektronik</option>
+                                    <option value="pakaian">Pakaian</option>
+                                    <option value="buah">Buah</option>
+                                    <option value="makanan">Makanan</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="stock" id="inputstock">
+                            </td>
+                        </tr>
+                    </thead>
+                   </table>
+                   <br>
+                   <button onclick="input()">input</button>
+              </td>
+          </tr>
+      </thead>
+    </table>
+<br>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Nama</td>
+                                <td>Harga</td>
+                                <td>Category</td>
+                                <td>stock</td>
+                            </tr>
+                        </thead>
+                        <tbody id="listable"></tbody>
+                    </table>
+                </td>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>
+<script src="./filter.js"></script>

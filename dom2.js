@@ -13,21 +13,47 @@ var data=[
 const printdata=()=>{
     var output=''
     data.forEach((val,index)=>{
-        output+=`<tr>
+        if(index==indexdelete){
+            output+=`<tr>
             <td>${index+1}</td>
             <td>${val.kegiatan}</td>
             <td><img src=${val.gambar} alt=${index} height='150px'></td>
             <td>${val.hari}</td>
         <td>
-            <button>edit</button>
-            <button>delete</button>
+            
+            <button onclick>edit</button>
+            <button onclick="deleteKegiatan(${index})">delete</button>
         </td>
                 
                 </tr>`
+        }else{
+            output+=`<tr>
+            <td>${index+1}</td>
+            <td>${val.kegiatan}</td>
+            <td><img src=${val.gambar} alt=${index} height='150px'></td>
+            <td>${val.hari}</td>
+        <td>
+            
+            <button>edit</button>
+            <button onclick="deleteKegiatan(${index})">delete</button>
+        </td>
+                
+                </tr>`
+        }
+      
     })
     document.getElementsByTagName('tbody')[0].innerHTML=output
 }
 printdata()
+
+const deleteKegiatan=(indexdel)=>{
+    indexdelete=indexdel
+    printdata()
+}
+const acceptdelete=(indexdel)=>{
+    data.splice(indexdel,1)
+    indexde
+}
 
 const inputdataOnClick=()=>{
     var kegiatan=document.getElementById('kegiatan').value
