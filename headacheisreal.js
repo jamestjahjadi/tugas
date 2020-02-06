@@ -7,7 +7,7 @@ class DataBarang{
     }
 }
 var dataForm=[
-    // new DataBarang('Handphone', '1000000','baru','elektronik'),
+    new DataBarang('Handphone', '1000000','baru','elektronik'),
 ]
 
 // var barang=document.getElementById('databarang').value 

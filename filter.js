@@ -9,14 +9,15 @@ class Data{
 }
 var id= new Date()
 var id1=id.getTime()
-// console.log(id1)
-var table=[
-    new Data(id1,'handphone','1000000','Elektronik',10)
-]
 
-const printTable=()=>{
+var table=[
+    new Data(id1,'handphone','1000000','Elektronik',10),
+    new Data(id1, 'pisang','10000','buah',5)
+]
+                            
+const printTable=(list)=>{
     var output=''
-    table.forEach((val,index)=>{
+    list.forEach((val,)=>{
         output+=`
     <tr>
         <td>${val.id}</td>
@@ -28,15 +29,44 @@ const printTable=()=>{
     })
     document.getElementById('listable').innerHTML=output
 } 
-printTable()
+printTable(table)
 
 const input=()=>{
+    var id= new Date()
+var id2=id.getTime()
        var newnama=document.getElementById('inputname').value
        var newharga=document.getElementById('inputharga').value
        var newselect=document.getElementById('inputselect').value
        var newstock=document.getElementById('inputstock').value
 table.push(
-    new Data(id1,newnama,newharga,newselect,newstock)
+    new Data(id2,newnama,newharga,newselect,newstock)
 )
-printTable()
+printTable(table)
 }
+
+
+
+var namezero=[]
+const funcName=()=>{
+    var namainput=document.getElementById('namainput').value
+    var arr=[]
+    table.forEach((val,index)=>{
+        if(namainput==val.nama){
+            arr.push(val)
+        }
+    }) 
+    printTable(arr)
+    if(namainput==''){
+        printTable(table)
+    }
+}
+
+
+
+
+//  var newInput=document.getElementById('namainput').value
+//     var filterTable=document.getElementById('test')
+//     var tr=filterTable.getElementsById('tr')
+//     for(var i=0;i<tr.length;i++){
+//         if(newInput)
+//     }
