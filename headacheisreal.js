@@ -56,7 +56,7 @@ var formBinatang=[
 
 const printAnimal=()=>{
     var outputBinatang='' 
-    formBinatang.forEach((val,index)=>{
+    formBinatang.forEach((val)=>{
         outputBinatang+=  `<tr>
         <td>${val.name}</td>
         <td>${val.umur}</td>

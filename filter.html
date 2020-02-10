@@ -23,13 +23,14 @@
             <tr>
                 <td>
                     Nama: <input oninput="funcName()" type="text" id="namainput"><br><br>
-                    Harga: <input  type="number" id="range1">-<input type="number" id="range2"><br><br>
-                    Kategori: <select id="kategori">
-                        <option hidden value="All">All</option>
+                    Harga: <input  type="number" onkeyup="pricefunc()" id="range1">-<input type="number" id="range2"><br><br>
+                    Kategori: <select id="kategori" onchange="categorysel()">
+                        <option value="All">All</option>
                         <option value="elektronik">Elektronik</option>
                         <option value="pakaian">Pakaian</option>
                         <option value="buah">Buah</option>
                         <option value="makanan">Makanan</option>
+                        <option value="other">Other</option>
                     </select>
                 </td>
             </tr>
@@ -57,6 +58,7 @@
                                       <option value="pakaian">Pakaian</option>
                                       <option value="buah">Buah</option>
                                       <option value="makanan">Makanan</option>
+                                      <option value="other">Other</option>
                                   </select>
                               </td>
                               <td>
@@ -85,7 +87,7 @@
                             <td>Harga</td>
                             <td>Category</td>
                             <td>stock</td>
-                            <td>action</td>
+                            <td colspan="2">action</td>
                         </tr>
                     </thead>
                     <tbody id="listable"></tbody>
@@ -94,6 +96,8 @@
         </tr>
     </thead>
 </fieldset>
+
+
 
 </body>
 </html>
